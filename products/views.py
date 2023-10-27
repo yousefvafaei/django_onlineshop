@@ -8,11 +8,6 @@ from .models import Product, Comment
 from .forms import CommentForm
 
 
-def test_translation(request):
-    result = _('Hello')
-    return HttpResponse(result)
-
-
 class ProductListView(generic.ListView):
     # model = Product
     queryset = Product.objects.filter(active=True)
