@@ -31,7 +31,7 @@ class CommentCreateView(generic.CreateView):
     form_class = CommentForm
 
     def form_valid(self, form):
-        # ta khat zir fagat form zakhire mishe va fagat overwrite kardim
+        # ta khat zir fagat form zakhire mishe va fagat override kardim
         obj = form.save(commit=False)
         obj.author = self.request.user
 

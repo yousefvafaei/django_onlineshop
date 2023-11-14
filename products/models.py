@@ -28,7 +28,7 @@ class ActiveCommentManager(models.Manager):
 class Comment(models.Model):
     PRODUCT_STARS = [
         ('1', _('Very Bad')),
-        ('2', _('very Bad')),
+        ('2', _('Bad')),
         ('3', _('Normal')),
         ('4', _('Good')),
         ('5', _('Perfect')),
