@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'allauth',
     'allauth.account',
+    'ckeditor',
 ]
 
 SITE_ID = 1
