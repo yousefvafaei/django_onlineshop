@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'persian_translate',
+    'orders',
 
     # third party
     'crispy_forms',

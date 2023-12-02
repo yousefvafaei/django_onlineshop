@@ -1,5 +1,6 @@
 {% load i18n %}
-
+{% load persian_translation_tags %}
+{% load humanize %}
 <!-- Mini Cart Start -->
 <aside class="mini-cart" id="miniCart">
     <div class="mini-cart-wrapper">
@@ -23,7 +24,7 @@
                                     </a>
                                 </span>
                                 <span class="mini-cart__product__quantity">
-                                    <span>{{ item.product_obj.price }}</span> &#215; <span>{{ item.quantity }}</span>
+                                    <span>{{ item.product_obj.price|intcomma:False|translate_number }}</span> &#215; <span>{{ item.quantity|intcomma:False|translate_number }}</span>
                                 </span>
                             </div>
                         </li>
@@ -31,11 +32,14 @@
                 </ul>
                 <div class="mini-cart__total">
                     <span>{% translate 'Total' %}</span>
-                    <span class="ammount">{{ cart.get_total_price }} {% translate '$' %}</span>
+                    <span class="ammount">{{ cart.get_total_price|intcomma:False|translate_number }} {% translate '$' %}</span>
                 </div>
                 <div class="mini-cart__buttons">
-                    <a href="{% url 'cart:cart_detail' %}" class="btn btn-fullwidth btn-bg-sand mb--20">{% translate 'Go to cart' %}</a>
-                    <a href="checkout.html" class="btn btn-fullwidth btn-bg-sand">{% translate 'Checkout' %}</a>
+                    <a href="{% url 'cart:cart_detail' %}"
+                       class="btn btn-fullwidth btn-bg-sand mb--20">{% translate 'Go to cart' %}</a>
+                    {% if cart|length %}
+                        <a href="{% url 'order_create' %}" class="btn btn-fullwidth btn-bg-sand">{% translate 'Checkout' %}</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
