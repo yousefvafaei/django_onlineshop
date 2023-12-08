@@ -59,7 +59,7 @@ msgstr "ثبت سفارش"
 
 #: .\templates\orders\order_create.html:65
 msgid "submit"
-msgstr "ارسال"
+msgstr "پرداخت"
 
 #: .\templates\orders\order_create.html:89
 #: .\templates\orders\order_create.html:96
